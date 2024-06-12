@@ -1,0 +1,31 @@
+main {
+    height: 1300px;
+}
+
+.logo {
+    height: 50px;
+}
+
+.carousel-item {
+    height: 700px;
+}
+
+.searchbar {
+    width: 12vw;
+}
+
+div {
+    outline: 1px red solid;
+}
+
+.categories {
+    height: 12vh;
+}
+
+.socialmedia{
+    height: 4vh;
+}
+
+/* .card {
+    width: 18rem;
+} */
