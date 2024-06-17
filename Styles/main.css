@@ -14,10 +14,6 @@ main {
     width: 12vw;
 }
 
-div {
-    outline: 1px red solid;
-}
-
 .categories {
     height: 12vh;
 }
@@ -25,7 +21,3 @@ div {
 .socialmedia{
     height: 4vh;
 }
-
-/* .card {
-    width: 18rem;
-} */
