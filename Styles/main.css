@@ -1,13 +1,9 @@
-main {
-    height: 1300px;
-}
-
 .logo {
-    height: 50px;
+    height: 5vh;
 }
 
 .carousel-item {
-    height: 700px;
+    height: 80vh;
 }
 
 .searchbar {
@@ -20,4 +16,8 @@ main {
 
 .socialmedia{
     height: 4vh;
+}
+
+#cardsContainer {
+    width: 18rem;
 }
