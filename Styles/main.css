@@ -3,21 +3,29 @@
 }
 
 .carousel-item {
-    height: 80vh;
-}
-
-.searchbar {
-    width: 12vw;
-}
-
-.categories {
-    height: 12vh;
+    height: 70vh;
 }
 
 .socialmedia{
     height: 4vh;
 }
 
+main {
+    min-height: 80vh;
+}
+
 #cardsContainer {
-    width: 18rem;
+    width: 90%;
+    margin: 0 auto;
+}
+
+#checkboxsContainer {
+    height: 7vh;
+    padding: 10px;
+    color: rgb(174, 35, 147);
+    font-size: large;
+}
+
+#image {
+    height: 35vh;
 }

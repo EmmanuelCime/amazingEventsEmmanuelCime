@@ -101,54 +101,21 @@
       </button>
     </div>
 
-    <div class="row categories container-fluid d-flex d-flex align-items-center">
-      <div class="col-10">
-        <ul class="list-group flex-row">
-          <li class="list-group-item">
-            <input class="form-check-input me-1" type="checkbox" value="" id="firstCheckboxStretched">
-            <label class="form-check-label stretched-link" for="firstCheckboxStretched">Food Fair</label>
-          </li>
-          <li class="list-group-item">
-            <input class="form-check-input me-1" type="checkbox" value="" id="secondCheckboxStretched">
-            <label class="form-check-label stretched-link" for="secondCheckboxStretched">Museum</label>
-          </li>
-          <li class="list-group-item">
-            <input class="form-check-input me-1" type="checkbox" value="" id="thirdCheckboxStretched">
-            <label class="form-check-label stretched-link" for="thirdCheckboxStretched">Costume Party</label>
-          </li>
-          <li class="list-group-item">
-            <input class="form-check-input me-1" type="checkbox" value="" id="fourthCheckboxStretched">
-            <label class="form-check-label stretched-link" for="fourthCheckboxStretched">Music Concert</label>
-          </li>
-          <li class="list-group-item">
-            <input class="form-check-input me-1" type="checkbox" value="" id="fifthCheckboxStretched">
-            <label class="form-check-label stretched-link" for="fifthCheckboxStretched">Race</label>
-          </li>
-          <li class="list-group-item">
-            <input class="form-check-input me-1" type="checkbox" value="" id="sixthCheckboxStretched">
-            <label class="form-check-label stretched-link" for="sixthCheckboxStretched">Book Exchange</label>
-          </li>
-          <li class="list-group-item">
-            <input class="form-check-input me-1" type="checkbox" value="" id="seventhCheckboxStretched">
-            <label class="form-check-label stretched-link" for="seventhCheckboxStretched">Let's go to the cinema</label>
-          </li>
-        </ul>
-      </div>
-      <div class="col-2">
-        <form class="searchbar d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">🔍</button>
-        </form>
+    <div id="searchContainer" class="container-fluid" >
+      <div class="container-fluid row">
+        <div class="container col" id="checkboxsContainer"></div>
+        <div class="col-sm-8 col-md-8 col-lg-2">
+          <div class="d-flex align-items-center">
+            <input id="searchBar" class="form-control" type="search" placeholder="Search an event">
+          </div>
+        </div>
       </div>
     </div>
 
-    <div class="container">
-      <div id="colordd" class="row">
-        <div id="cardsContainer" class="cards">
-        </div>
-      </div> 
+    <div class="container-fluid">
+      <div id="cardsContainer" class="row row-cols-1 row-cols-md-2 row-cols-lg-4 justify-content-center"></div>
+      <div id="searchError" class="text-center">No results have been generated with the search carried out</div>
     </div>
-    
 
   </main>
 

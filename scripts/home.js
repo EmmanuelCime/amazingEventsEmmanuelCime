@@ -193,57 +193,74 @@ const data = {
       __v: 0,
     },
   ],
-};
+}
 
-function cardGenerator(events) {
-  let container = document.getElementById("cardsContainer")
+cardsGenerator(data.events)
+checkFilter(data.events)
 
-  for (let i = 0; i < data.events.length; i++) {
-    let card = document.createElement('div')
-    card.className = "card"
-    card.innerHTML = `
-              <img src= ${events[i].image} class="card-img-top" alt= ${events[i].category}>
-              <div class="card-body">
-                <h5 class="card-title">${events[i].name}</h5>
-                <p class="card-text">${events[i].description}</p>
-              </div>
-              <div class="card-body d-flex justify-content-between">
-                <span>US ${events[i].price}</span>
-                <a href="./details.html" class="card-link btn btn-primary">Details</a>
-              </div>`
 
-    container.appendChild(card)
+function textFilter(eventsArray) {
+  let text = document.querySelector("#searchBar").value
+  let filteredEvents = eventsArray.filter(event => event.name.toLowerCase().includes(text) || event.description.toLowerCase().includes(text))
+  return filteredEvents
+}
+
+function checkFilter(eventsArray) {
+  let checkboxChecked = [...document.querySelectorAll('input[type="checkbox"]:checked')]
+  checkboxChecked = checkboxChecked.map(e => e.value)
+  console.log(checkboxChecked);
+}
+
+let categories = [...new Set(data.events.map(event => event.category))]
+document.querySelector("#searchBar").addEventListener('keyup', (eventExecuted) => {
+  let filteredText = textFilter(data.events)
+  if (filteredText.length !== 0) {
+    cardsGenerator(filteredText)
+  }
+})
+
+function checkboxGenerator(categories) {
+  for (let i = 0; i < categories.length; i++) {
+      let newCheckbox = document.createElement('div')
+      newCheckbox.className = "form-check-inline form-check"
+      newCheckbox.innerHTML = `
+              <input id="${categories[i]}" type="checkbox" class="form-check-input" value="${categories[i]}">
+              <label class="form-check-label" for="${categories[i]}"> ${categories[i]}
+              </label>
+      `
+      document.querySelector("#checkboxsContainer").appendChild(newCheckbox)
   }
 }
 
-cardGenerator(data.events)
+checkboxGenerator(categories)
 
 
 
+function cardsGenerator(events) {
 
+  let container = document.getElementById("cardsContainer")
+  container.innerHTML = ''
 
+  events.forEach( (e) => {
+      let card = document.createElement('div')
+      card.classList.add('card', 'col', 'd-flex')
+      card.dataset.category = e.category
 
+      card.innerHTML = `
+          <div class="card col d-flex">
+              <img class="card-img-top" src="${e.image}" alt="${e.category}">
+              <div class="card-body d-flex flex-column justify-content-center align-items-center flex-grow-1">
+                  <h5 class="card-title">${e.name}</h5>
+                  <p class="card-text">${e.description}</p>
+                  <p class="card-text">${e.category}</p>
+              </div>
+              <div class="card-footer d-flex justify-content-between">
+                  <span>USD ${e.price}</span>
+                  <a href="./details.html?id=${e._id}" class="btn btn-info">Details</a>
+              </div>
+          </div>
+      `
+      container.appendChild(card)
+  })
 
-
-
-
-
-
-
-
-
-
-
-
-
-/* <div class="card col-2 text-center">
-            <img src="./Recursos_Amazing_Events_Task_1/books.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Festival of the collectivities</h5>
-              <p class="card-text">Enjoy your favorite dishes from different countries in a unique event for the whole family.</p>
-            </div>
-            <div class="card-body d-flex justify-content-between">
-              <span>US $5</span>
-              <a href="./details.html" class="card-link btn btn-primary">Details</a>
-            </div>
-          </div> */
+}
