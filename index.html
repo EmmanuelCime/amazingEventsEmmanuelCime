@@ -101,20 +101,19 @@
       </button>
     </div>
 
-    <div id="searchContainer" class="container-fluid" >
-      <div class="container-fluid row">
+    <div id="searchContainer" class="container-fluid">
+      <div id="searchBarContainer" class="container-fluid row mt-5 ms-2">
         <div class="container col" id="checkboxsContainer"></div>
         <div class="col-sm-8 col-md-8 col-lg-2">
           <div class="d-flex align-items-center">
-            <input id="searchBar" class="form-control" type="search" placeholder="Search an event">
+            <input id="searchBar" class="form-control border border-primary" type="search" placeholder="Search an event">
           </div>
         </div>
       </div>
     </div>
 
     <div class="container-fluid">
-      <div id="cardsContainer" class="row row-cols-1 row-cols-md-2 row-cols-lg-4 justify-content-center"></div>
-      <div id="searchError" class="text-center">No results have been generated with the search carried out</div>
+      <div id="cardsContainer" class="row row-cols-1 row-cols-md-2 row-cols-lg-5 justify-content-center mt-3"></div>
     </div>
 
   </main>
@@ -147,7 +146,9 @@
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
 
-  <script src="./scripts/home.js"></script>
+  <script type="module" src="./scripts/home.js"></script>
+  <script type="module" src="./modules/functions.js"></script>
+  <script type="module" src="./scripts/details.js"></script>
 
 </body>
 
